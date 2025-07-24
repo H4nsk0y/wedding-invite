@@ -49,7 +49,7 @@ const nameRaw = params.get("name");
 if (nameRaw) {
   const name = decodeURIComponent(nameRaw);
   const greeting = document.getElementById("personalized");
-  if (greeting) greeting.textContent = `Уважаемый ${name}!`;
+  if (greeting) greeting.textContent = `Уважаемый (ая) ${name}!`;
 }
 
 
