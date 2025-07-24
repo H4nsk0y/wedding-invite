@@ -44,13 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
   startCountdown();
 
   // Именное приглашение через ?name=Имя
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get("name");
-  if (name) {
-    const formatted = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    const greeting = document.getElementById("personalized");
-    if (greeting) greeting.textContent = `Уважаемый ${formatted}!`;
-  }
+ const nameRaw = params.get("name");
+if (nameRaw) {
+  const name = decodeURIComponent(nameRaw);
+  const greeting = document.getElementById("personalized");
+  if (greeting) greeting.textContent = `Уважаемый ${name}!`;
+}
+
 
   // Музыка — кнопка включения/выключения
   const button = document.getElementById("music-btn");
