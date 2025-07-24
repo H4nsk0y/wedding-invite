@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свадебное приглашение</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+   <button id="music-btn" class="fade-in">Включить музыку</button>
+      <audio id="bg-music" loop>
+          <source src="Perfect.mp3" type="audio/mpeg" />
+              </audio>
+    <!-- Верхний орнамент -->
+    <img src="ornament-top.png" alt="Верхний орнамент" class="ornament-img top-img" />
+
+    <!-- Первый экран -->
+    <section class="hero-screen fade-in">
+      <div class="invitation">
+        <h1 class="names">Ханахмед <span class="and">&</span> Нанакиз</h1>
+        <p class="date">21 августа 2025</p>
+        <p class="subinfo">Четверг, 18:00</p>
+        <p class="location">Банкетный зал "Эрмитаж"</p>
+        <div class="divider">Ждём Вас</div>
+        <div class="countdown">
+        <div><span id="weeks">00</span><div class="label">недель</div></div>
+        <div><span id="days">00</span><div class="label">дней</div></div>
+        <div><span id="hours">00</span><div class="label">часов</div></div>
+        <div><span id="minutes">00</span><div class="label">минут</div></div>
+        <div><span id="seconds">00</span><div class="label">секунд</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Нижний орнамент -->
+    <img src="ornament-bottom.png" alt="Нижний орнамент" class="ornament-img bottom-img" />
+
+    <!-- Второй экран -->
+    <section class="details-screen fade-in">
+  <img src="background-pattern.png" alt="Фон" class="background-img" />
+  <div class="overlay">
+    <h2 class="greeting" id="personalized">Уважаемый Гость!</h2>
+    <p class="text">
+      С огромным удовольствием хотим пригласить вас на торжество, посвящённое бракосочетанию Ханахмеда и Нанакиз
+    </p>
+    <p class="signature">Ждём Вас!</p>
+  </div>
+</section>
+
+
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+</audio>
+</body>
+</html>
