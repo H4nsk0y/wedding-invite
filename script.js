@@ -44,12 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
   startCountdown();
 
   // Именное приглашение через ?name=Имя
- const nameRaw = params.get("name");
+const params = new URLSearchParams(window.location.search);
+const nameRaw = params.get("name");
 if (nameRaw) {
   const name = decodeURIComponent(nameRaw);
   const greeting = document.getElementById("personalized");
   if (greeting) greeting.textContent = `Уважаемый ${name}!`;
 }
+
 
 
   // Музыка — кнопка включения/выключения
