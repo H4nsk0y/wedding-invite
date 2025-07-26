@@ -175,6 +175,35 @@ body {
   animation-delay: 0.5s;
 }
 
+
+.scroll-down {
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeSlideIn 1.5s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.scroll-down span {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 16px;
+  color: #7c4c2b;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.scroll-down .arrow {
+  font-size: 24px;
+  animation: bounce 1.6s infinite;
+  color:#d8b08c;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+
 @keyframes riseAndFade {
   to {
     opacity: 1;
@@ -216,6 +245,17 @@ body {
   font-size: 24px;
   color: #7c4c2b;
 }
+
+.signature1 {
+  margin-top: -28px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #7c4c2b;
+}
+
+
+
+
 
 /* === Анимации === */
 .fade-in {
