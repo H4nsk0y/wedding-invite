@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const offsetTop = section.getBoundingClientRect().top + window.scrollY;
       smoothScrollTo(offsetTop, 2000); // 2 секунды плавности
     }
-  }, 8000); // через 8 секунд
+  }, 5000); // через 5 секунд
 
   // Музыка — кнопка включения/выключения
   const button = document.getElementById("music-btn");
