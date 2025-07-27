@@ -44,15 +44,42 @@ document.addEventListener("DOMContentLoaded", () => {
   startCountdown();
 
   // Именное приглашение через ?name=Имя
-const params = new URLSearchParams(window.location.search);
-const nameRaw = params.get("name");
-if (nameRaw) {
-  const name = decodeURIComponent(nameRaw);
-  const greeting = document.getElementById("personalized");
-  if (greeting) greeting.textContent = `Уважаемый (ая) ${name}!`;
-}
+  const params = new URLSearchParams(window.location.search);
+  const nameRaw = params.get("name");
+  if (nameRaw) {
+    const name = decodeURIComponent(nameRaw);
+    const greeting = document.getElementById("personalized");
+    if (greeting) greeting.textContent = `Уважаемый (ая) ${name}!`;
+  }
 
+  // Плавный автоскролл на второй экран через 8 секунд
+  function smoothScrollTo(targetY, duration = 2000) {
+    const startY = window.scrollY;
+    const startTime = performance.now();
 
+    function scrollStep(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeInOut = 0.5 * (1 - Math.cos(Math.PI * progress));
+      const scrollY = startY + (targetY - startY) * easeInOut;
+
+      window.scrollTo(0, scrollY);
+
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+
+    requestAnimationFrame(scrollStep);
+  }
+
+  setTimeout(() => {
+    const section = document.querySelector(".details-screen");
+    if (section) {
+      const offsetTop = section.getBoundingClientRect().top + window.scrollY;
+      smoothScrollTo(offsetTop, 2000); // 2 секунды плавности
+    }
+  }, 8000); // через 8 секунд
 
   // Музыка — кнопка включения/выключения
   const button = document.getElementById("music-btn");
