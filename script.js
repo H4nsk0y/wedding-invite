@@ -96,17 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
 
     button.addEventListener("click", () => {
-      if (music.paused) {
-        music.play().then(() => {
-          button.textContent = "Выключить музыку";
-        }).catch(err => {
-          console.error("Ошибка при воспроизведении музыки:", err);
-        });
-      } else {
-        music.pause();
-        music.currentTime = 0;
-        button.textContent = "Включить музыку";
-      }
+  if (music.paused) {
+    music.play().then(() => {
+      button.innerHTML = "Выключить музыку <span style='text-decoration: line-through;'>♪</span>";
+    }).catch(err => {
+      console.error("Ошибка при воспроизведении музыки:", err);
     });
-  }
+  } else {
+    music.pause();
+    music.currentTime = 0;
+    button.innerHTML = "Включить музыку ♪";
+    }
+    });
+    }
 });
